@@ -60,6 +60,6 @@ func main() {
 	go calcSquares(number, sqrch)
 	go calcCubes(number, cubech)
 	squares, cubes := <-sqrch, <-cubech
-	fmt.Println("Final output", squares, cubes)
+	fmt.Println("Final output", squares+cubes)
 
 }
