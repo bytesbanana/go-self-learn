@@ -20,7 +20,6 @@ func main() {
 	 */
 	fmt.Println("Start:", time.Now())
 	messages := make(chan string)
-
 	go func() {
 		//* Send a value into a channel using the channel <- syntax
 		time.Sleep(time.Second * 2)
