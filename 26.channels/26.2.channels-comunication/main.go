@@ -53,7 +53,7 @@ func main() {
 	<-done
 	fmt.Println("main function")
 
-	// * Ex2
+	// * Ex2 communitaion
 	number := 59
 	sqrch := make(chan int)
 	cubech := make(chan int)
@@ -61,5 +61,11 @@ func main() {
 	go calcCubes(number, cubech)
 	squares, cubes := <-sqrch, <-cubech
 	fmt.Println("Final output", squares+cubes)
+
+	// * Ex3 Deadlock
+	ch := make(chan int)
+	ch <- 5 // Send data to channel but Goroutine receiving data from the channel "ch"
+
+	// * Ex4 Unidirectional channels
 
 }
